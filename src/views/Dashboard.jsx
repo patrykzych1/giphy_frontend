@@ -2,6 +2,7 @@ import { Image } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router'
 import SearchForm from '../components/searchForm'
+import { SET_GIPHIES, SET_SEARCH_TERM } from '../constants/giphyConstants'
 import request from '../utils/request'
 
 function Dashboard ({ giphies, setGiphies, searchTerm, setSearchTerm }) {
@@ -31,8 +32,8 @@ function mapStateToProps (state) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setGiphies: (payload) => dispatch({ type: 'SET_GIPHIES', payload }),
-    setSearchTerm: (payload) => dispatch({ type: 'SET_SEARCH_TERM', payload })
+    setGiphies: (payload) => dispatch({ type: SET_GIPHIES, payload }),
+    setSearchTerm: (payload) => dispatch({ type: SET_SEARCH_TERM, payload })
   }
 }
 

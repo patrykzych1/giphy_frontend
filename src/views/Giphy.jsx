@@ -12,7 +12,6 @@ function Giphy ({ giphies }) {
   const navigate = useNavigate()
   useEffect(() => {
     setGiphy(giphies.find(x => x.id === params.id))
-    console.log(giphies)
   }, [params, giphies])
 
   return (

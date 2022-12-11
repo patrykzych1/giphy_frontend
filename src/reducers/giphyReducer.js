@@ -1,3 +1,5 @@
+import { SET_GIPHIES, SET_SEARCH_TERM } from "../constants/giphyConstants"
+
 const initialState = {
   giphies: [],
   searchTerm: ''
@@ -5,12 +7,12 @@ const initialState = {
 
 function giphyReducer (state = initialState, action) {
   switch (action.type) {
-    case 'SET_SEARCH_TERM':
+    case SET_SEARCH_TERM:
       return {
         ...state,
         searchTerm: action.payload
       }
-    case 'SET_GIPHIES':
+    case SET_GIPHIES:
       return {
         ...state,
         giphies: action.payload
