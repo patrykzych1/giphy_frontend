@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { Container } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Dashboard from './views/Dashboard'
+import Giphy from './views/Giphy'
 
-function App() {
+function App () {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Dashboard />
+    },
+    {
+      path: '/:id',
+      element: <Giphy />
+    }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Container className='p-2'>
+        <RouterProvider router={router} />
+      </Container>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
